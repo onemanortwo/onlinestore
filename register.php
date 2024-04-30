@@ -74,6 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($error_message)) {
         echo "<p class='error'>$error_message</p>";
     }
+// display the footer
+include 'templates/footer.php';
+
     ?>
 </body>
 </html>
