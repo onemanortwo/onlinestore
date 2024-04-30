@@ -8,8 +8,8 @@ require_once 'src/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Retrieve form data
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
     // this creates a hashed password for storage in the db
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -17,12 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // statment for preping the data into the database
 
-        $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
-        
+                $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+                
         // binds the username para to the variable of same name
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $hashed_password);
-        
+                $stmt->bindParam(':username', $username);
+                $stmt->bindParam(':password', $hashed_password);
+                
         //creates/runs the statment 
         $stmt->execute();
         
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   
   }
-  include 'templates/header.php';
+include 'templates/header.php';
 ?>
 
 <!-- HTML for form-->
@@ -57,15 +57,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>User Registration</h2>
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
-        <label for="username">Username:</label><br>
+            <label for="username">Username:</label><br>
 
-        <input type="text" id="username" name="username" required><br>
+            <input type="text" id="username" name="username" required><br>
 
-        <label for="password">Password:</label><br>
+            <label for="password">Password:</label><br>
 
-        <input type="password" id="password" name="password" required><br><br>
+            <input type="password" id="password" name="password" required><br><br>
 
-        <input type="submit" value="Register">
+     <input type="submit" value="Register">
     </form>
     
     <?php

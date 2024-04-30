@@ -1,8 +1,13 @@
 
 
-<?php
 
-//connection to thje data based with credentals. 
+<?php
+//final version of database with correct colums - Previous deleted
+
+
+
+//connection to the data based with credentals. 
+
  $host = 'localhost';
 
  $dbname = 'onlinestore';
@@ -21,7 +26,7 @@
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    //if there is an exception 
+    //if there is an error 
 
 } catch (PDOException $e) {
     die("Cannnot coonect: " . $e->getMessage());

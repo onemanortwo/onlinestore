@@ -27,5 +27,5 @@ session_unset();
      header('Location: index.php');
 
 
-      exit(); // terminates the script
+      exit(); // terminates the scrip
 }

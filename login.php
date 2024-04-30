@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // retrieve form data
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
     // validate form data 
 
@@ -34,34 +34,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         try {
             // SQL statement to retrieve user data from the database
-            $stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username = :username");
-            
-            // bind parameters
-            $stmt->bindParam(':username', $username);
-            
-            // run  statement
-            $stmt->execute();
-            
-            // get  result
-            $user = $stmt->fetch();
-            
-            // check password
-            if ($user && password_verify($password, $user['password'])) {
+$stmt = $pdo->prepare("SELECT id, username, password FROM users WHERE username = :username");
 
-                // set session variables
-                $_SESSION['user_id'] = $user['id'];
+// bind parameters
+$stmt->bindParam(':username', $username);
 
-                // Go home page after successful login
+// run  statement
+$stmt->execute();
 
-                header("Location: index.php");
-                exit();
-            } else {
-                $error_message = "Wrong username or password.";
-            }
-        } catch (PDOException $e) {
+// get  result
+$user = $stmt->fetch();
 
-            //  error message if login fails
-            $error_message = "Login failed: " . $e->getMessage();
+// check password
+if ($user && password_verify($password, $user['password'])) {
+
+    // set session variables
+    $_SESSION['user_id'] = $user['id'];
+
+    // Go home page after successful login
+
+    header("Location: index.php");
+    exit();
+} else {
+    $error_message = "Wrong username or password.";
+}
+} catch (PDOException $e) {
+
+//  error message if login fails
+$error_message = "Login failed: " . $e->getMessage();
         }
     }
 }
