@@ -5,6 +5,7 @@ body {
     margin: 10;
     padding: 10;
     margin-left: 50px;
+    margin-right: 50px;
 }
 
 
@@ -32,12 +33,12 @@ main {
 
 .product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 }
 
 .product {
-    border: 1px solid blue;
+    border: 1px solid rgb(223, 25, 25);
     padding: 10px;
 }
 
