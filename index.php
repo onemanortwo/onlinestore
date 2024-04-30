@@ -22,7 +22,7 @@ include 'templates/header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to the online store</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="images/home.png" type="image/png">
+    
 </head>
 <body>
 <h1>Welcome to the Online Boating Store</h1>

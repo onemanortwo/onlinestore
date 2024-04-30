@@ -1,19 +1,18 @@
 <?php
+
 // activates the sessops php file whihc keeps track of user sessions
 
 require_once 'src/sessions.php';
 
 
 
-// Products array that give s list of prodcuts. This is not connected to a database and is only a sample page.
+// products array that give s list of prodcuts.  not connected to a database and is only a sample page.
 
 $products = [
     ['id' => 1, 'name' => 'Solar-Powered Electric Boat Conversion Kit', 'price' => 210, 'description' => ' The kit includes solar panels, electric motors, battery packs, and all necessary components for a seamless conversion process'],
     ['id' => 2, 'name' => 'Fixed VHF Radio', 'price' => 150, 'description' => 'The GX1400G makes DSC easy. With an internal 66 Channel GPS built into the front panel, there is no need to hassle with wiring the radio to a GPS for DSC. Out of the box and ready to go, DSC calling, position sharing, waypoint navigation, navigation to DSC distress calls can all be performed with just a few simple steps. '],
     ['id' => 3, 'name' => 'Deck organiser', 'price' => 70.99, 'description' => 'This product involves installing simple hooks or clips on your boats deck to neatly organize your dock lines'],
-    
-
-
+    ['id' => 4, 'name' => 'Led Round Light Bar, 4.5 inch', 'price' => 21.49, 'description' => '12V 24V 140W 14000LM Flood Light Pod Off Road Fog Driving Roof Bar Bumper for Jeep,SUV Truck, Hunters'],
 ];
 ?>
 
@@ -36,6 +35,7 @@ $products = [
         <?php foreach ($products as $product): ?>
 
             <!-- This is a comment -->
+
             <div class="product">
                 <h3><?php echo $product['name']; ?></h3>
                 <p>Price: <?php echo number_format($product['price'], 2, ',', '.'); ?>€</p>
