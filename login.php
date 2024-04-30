@@ -45,13 +45,13 @@ $stmt->execute();
 // get  result
 $user = $stmt->fetch();
 
-// check password
+// check password 0r vierify password
 if ($user && password_verify($password, $user['password'])) {
 
-    // set session variables
+    // set session id so can check if user is logged in.
     $_SESSION['user_id'] = $user['id'];
 
-    // Go home page after successful login
+    // go home page after successful login
 
     header("Location: index.php");
     exit();
@@ -97,7 +97,7 @@ include 'templates/header.php';
     <?php
 
 
-    // Display error message if login fails
+    // display error message if login fails
     if (!empty($error_message)) {
         echo "<p class='error'>$error_message</p>";
     }
