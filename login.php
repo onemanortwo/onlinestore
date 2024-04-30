@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // set session variables
                 $_SESSION['user_id'] = $user['id'];
 
-                // Go to home page after successful login
+                // Go home page after successful login
 
                 header("Location: index.php");
                 exit();
